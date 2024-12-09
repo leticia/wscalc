@@ -5,7 +5,7 @@
 
 Dependências:
 
-1. `python3`
+1. `python >= 3`
 2. `curl` (para testes)
 
 ## Como rodar
@@ -13,7 +13,7 @@ Dependências:
 Rode o servidor com:
 
 ```sh
-python3 server.py
+python server.py
 ```
 
 Teste requisições via `curl`:
