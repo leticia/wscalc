@@ -144,8 +144,9 @@ class ProcessadorRequisicoes(BaseHTTPRequestHandler):
 
         # Envia cabeçalho HTTP
         self.send_response(HTTPStatus.OK)
-        self.send_header('Content-Type', 'text/plain')
+        self.send_header('Content-Type', 'text/html')
         self.send_header('Content-Length', len(resposta))
+        self.send_header('Cache-Control', "no-store")
         self.end_headers()
 
         # Envia texto HTTP
