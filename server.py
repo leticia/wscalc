@@ -46,7 +46,7 @@ OPERACOES = {
 class ProcessadorRequisicoes(BaseHTTPRequestHandler):
     # Retorna erros em formato texto ao invés de HTML.
     error_content_type = 'text/plain'
-    error_message_format = 'Error: %(code)d. %(message)s.'
+    error_message_format = 'Erro: %(code)d. %(message)s.'
 
     def do_GET(self):
         (operacao, argumentos) = self._quebra_caminho()
