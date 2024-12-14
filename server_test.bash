@@ -1,7 +1,7 @@
 SERVIDOR="http://localhost:8080"
 TEM_FALHA=0
 
-# Função para auxiliar na execução de senários de teste.
+# Função para auxiliar na execução de cenários de teste.
 function teste() {
     local nome="$1"
     local metodo="$2"
@@ -33,7 +33,7 @@ do
     sleep 0.5
 done
 
-# === Senários de teste ====
+# === Cenários de teste ====
 
 # Falta prefixo /wscalc
 teste "retorna 404 para GET" "GET" "bananas" "Erro: 404. Not Found."
@@ -184,7 +184,7 @@ teste "variáveis são números: x+z" "GET" "wscalc/add/x/z" "4"
 teste "var retorna 400 constante desconhecida" "GET" "wscalc/const/xxx" "Erro: 400. Bad Request."
 teste "var retorna 400 para 2 argumentos" "GET" "wscalc/const/x/1" "Erro: 400. Bad Request."
 
-# Finaliza o servicor em background
+# Finaliza o servidor em background
 kill -9 "$SERVIDOR_PID"
 
 if [[ "$TEM_FALHA" -gt 0 ]]
