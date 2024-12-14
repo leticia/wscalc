@@ -22,6 +22,10 @@ Teste requisições via `curl`:
 curl http://localhost:8080/wscalc/add/1/1
 ```
 
+Para testar no navegador:
+
+Visite a url `http://localhost:8080`.
+
 Pressione Ctrl-c para fechar o servidor.
 
 ## Rodar testes
