@@ -4,7 +4,7 @@ let dirty = false;
 let stack = null;
 
 function isNumber(value) {
-    return value % 1 == 0;
+    return parseFloat(value) != NaN;
 }
 
 function isVar(name) {
