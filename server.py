@@ -1,3 +1,5 @@
+import os
+import shutil
 import math
 from http import HTTPStatus
 from http.server import HTTPServer, BaseHTTPRequestHandler
@@ -48,8 +50,11 @@ class ProcessadorRequisicoes(BaseHTTPRequestHandler):
     error_message_format = 'Erro: %(code)d. %(message)s.'
 
     def do_GET(self):
-        (operacao, argumentos) = self._quebra_caminho()
+        # Se não for uma chamada de serviço, serve um arquivo da pasta `assets`.
+        if not self.path.startswith('/wscalc'):
+            return self._serve_assets()
 
+        (operacao, argumentos) = self._quebra_caminho()
         # Se a expressão não existe, este caminho é inválido.
         expressao = OPERACOES.get(operacao, None)
         if expressao is None:
@@ -76,6 +81,18 @@ class ProcessadorRequisicoes(BaseHTTPRequestHandler):
             return
 
         self._envia_resultado(resultado)
+
+    # Serve arquivos da pasta assets: estilos, HTML e scripts
+    def _serve_assets(self):
+        path = 'index.html' if self.path == '/' else self.path
+        try:
+            with open(f'{os.getcwd()}/assets/{path}', 'rb') as f:
+                self.send_response(HTTPStatus.OK);
+                self.send_header('Cache-Control', "no-store")
+                self.end_headers()
+                shutil.copyfileobj(f, self.wfile)
+        except IOError:
+            self.send_error(HTTPStatus.NOT_FOUND)
 
     def do_POST(self):
         (operacao, argumentos) = self._quebra_caminho()

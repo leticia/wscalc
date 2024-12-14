@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WSCalc</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="calculator">
+        <input id="display" readonly placeholder="0">
+        <div id="keys">
+            <button class="operator-btn" onclick="appendToDisplay('x')">RX</button>
+            <button class="operator-btn" onclick="appendToDisplay('y')">RY</button>
+            <button class="operator-btn" onclick="appendToDisplay('z')">RZ</button>
+            <button onclick="unaryOperation('sin')">sin</button>
+            <button onclick="unaryOperation('cos')">cos</button>
+
+            <button class="operator-btn" onclick="saveVar('x')">SX</button>
+            <button class="operator-btn" onclick="saveVar('y')">SY</button>
+            <button class="operator-btn" onclick="saveVar('z')">SZ</button>
+            <button onclick="unaryOperation('tan')">tan</button>
+            <button onclick="unaryOperation('sec')">sec</button>
+
+            <button onclick="unaryOperation('log')">log</button>
+            <button onclick="unaryOperation('lg')">log2</button>
+            <button onclick="unaryOperation('ln')">ln</button>
+            <button onclick="unaryOperation('sq')">x²</button>
+            <button onclick="unaryOperation('sqrt')">√x</button>
+
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button class="op-btn" onclick="binaryOperation('mul')">*</button>
+            <button onclick="unaryOperation('fac')">x!</button>
+
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button class="op-btn" onclick="binaryOperation('div')">/</button>
+            <button onclick="unaryOperation('inv')">1/x</button>
+
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button class="op-btn" onclick="binaryOperation('add')">+</button>
+            <button onclick="unaryOperation('mod')">|x|</button>
+
+            <button onclick="toggleSign()">+/-</button>
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button class="op-btn" onclick="binaryOperation('sub')">-</button>
+            <button onclick="appendToDisplay('π')">π</button>
+
+            <button class="clear-btn" onclick="clearDisplay()">C</button>
+            <button class="clear-btn" onclick="clearEntry()">CE</button>
+            <button onclick="binaryOperation('pow')">^</button>
+            <button class="op-btn"onclick="equal()">=</button>
+            <button onclick="appendToDisplay('e')">e</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+

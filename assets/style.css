@@ -1,0 +1,119 @@
+/* Base settings */
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: hsl(0, 0%, 25%);
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* Calculator container */
+#calculator {
+    background-color: hsl(0, 0%, 15%);
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    overflow: hidden;
+}
+
+#display {
+    width: 100%;
+    padding: 20px 25px; /* Ajuste para maior espaçamento lateral */
+    font-size: 2.5rem;
+    text-align: right; /* Mantém o alinhamento à direita */
+    border: none;
+    background-color: hsl(0, 0%, 20%);
+    color: white;
+    border-bottom: 1px solid hsl(0, 0%, 30%);
+    overflow: hidden; /* Garante que o texto não ultrapasse os limites */
+    box-sizing: border-box; /* Inclui padding e borda dentro do tamanho total */
+}
+
+
+/* Keypad grid layout */
+#keys {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    padding: 20px;
+    background-color: hsl(0, 0%, 15%);
+}
+
+/* Button styling */
+button {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 12px;
+    border: none;
+    background-color: hsl(0, 0%, 30%);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+}
+
+/* Button hover and active states */
+button:hover {
+    background-color: hsl(0, 0%, 40%);
+    transform: scale(1.05);
+}
+button:active {
+    background-color: hsl(0, 0%, 50%);
+    transform: scale(0.95);
+}
+
+/* Special buttons for operations */
+button.operator-btn {
+    background-color: hsl(35, 100%, 50%);
+}
+button.operator-btn:hover {
+    background-color: hsl(35, 100%, 60%);
+}
+button.operator-btn:active {
+    background-color: hsl(35, 100%, 70%);
+}
+
+/* Clear buttons (C, CE) */
+button.clear-btn {
+    background-color: hsl(0, 80%, 50%);
+}
+button.clear-btn:hover {
+    background-color: hsl(0, 80%, 60%);
+}
+button.clear-btn:active {
+    background-color: hsl(0, 80%, 70%);
+}
+
+/* Equals button */
+button.equals-btn {
+    background-color: hsl(120, 80%, 40%);
+    grid-column: span 2; /* Make it wider */
+}
+button.equals-btn:hover {
+    background-color: hsl(120, 80%, 50%);
+}
+button.equals-btn:active {
+    background-color: hsl(120, 80%, 60%);
+}
+
+/* Operators button */
+button.op-btn {
+    background-color: hsl(190, 80%, 40%);
+}
+button.op-btn:hover {
+    background-color: hsl(190, 80%, 50%);
+}
+button.op-btn:active {
+    background-color: hsl(190, 80%, 60%);
+}
+
+/* Adjustments for specific rows */
+button.pi-btn, button.euler-btn {
+    font-size: 1.5rem;
+    font-style: italic;
+}
