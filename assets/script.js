@@ -31,11 +31,7 @@ function clearDisplay() {
 }
 
 function clearEntry() {
-    if (isNumber(display.value)) {
-        display.value = display.value.slice(0, -1);
-    } else {
-        display.value = "";
-    }
+    display.value = "";
 }
 
 function toggleSign() {
