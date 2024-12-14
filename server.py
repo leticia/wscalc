@@ -1,4 +1,3 @@
-import argparse
 import math
 from http import HTTPStatus
 from http.server import HTTPServer, BaseHTTPRequestHandler
